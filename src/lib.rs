@@ -16,7 +16,7 @@ pub const MODULE_NAME: &str = "bf";
 
 fn initialize(ctx: &Context, _args: &[ValkeyString]) -> Status {
     let ver = ctx
-        .get_redis_version()
+        .get_server_version()
         .expect("Unable to get server version!");
     if !valid_server_version(ver) {
         ctx.log_warning(
